@@ -35,4 +35,56 @@ public class VoterCardDao {
 	    }   
 	}
 
+	
+	public void updateVoterCard(int voterId,VoterCard card) {
+		EntityManager entityManager=getEntityManager();
+		VoterCard dbCard=entityManager.find(VoterCard.class, voterId);
+		if(dbCard!=null) {
+//			that votercard is present then i can update the data
+			EntityTransaction entityTransaction=entityManager.getTransaction();
+			entityTransaction.begin();
+			
+			card.setId(voterId);
+			entityManager.merge(card);
+			entityTransaction.commit();
+			
+		}else {
+//		that votercard is not present then we should not update the data
+			System.out.println("Sorry voterCard id is not present");
+		}
+	}
+	
+	
+	public void findVoterCard(int voterId) {
+		EntityManager entityManager=getEntityManager();
+		VoterCard dbCard=entityManager.find(VoterCard.class, voterId);
+		if(dbCard!=null) {
+//			voterCard is present
+			System.out.println(dbCard);
+		}else {
+//			id is not present 
+			System.out.println("Sorry voterId is noy present");
+		}
+		
+	}
+	
+	
+	public void deleteVoterCard(int voterId) {
+		EntityManager entityManager=getEntityManager();
+		VoterCard dbCard=entityManager.find(VoterCard.class, voterId);
+		if(dbCard!=null) {
+//			voterCard is present
+			EntityTransaction entityTransaction=entityManager.getTransaction();
+			entityTransaction.begin();
+			entityManager.remove(dbCard);
+			entityTransaction.commit();
+		}else {
+//			id is not present 
+			System.out.println("Sorry voterId is noy present");
+		}
+		
+	}
+	
+	
+	
 }

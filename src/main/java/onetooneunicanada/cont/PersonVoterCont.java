@@ -26,20 +26,45 @@ public static void main(String[] args) {
 	
 	
 	
-	VoterCard card=new VoterCard();
-	card.setId(300);
-	card.setName("Sandhya");
-	card.setAge(18);
+//	VoterCard card=new VoterCard();
+//	card.setId(300);
+//	card.setName("Sandhya");
+//	card.setAge(18);
+//	
+//	
+//	VoterCardDao cardDao=new  VoterCardDao();
+//	cardDao.saveVoterCard(3, card);
+//	
 	
+//UPDATE
 	
-	VoterCardDao cardDao=new  VoterCardDao();
-	cardDao.saveVoterCard(3, card);
+//	VoterCard card=new VoterCard();
+//	card.setName("SandhyaS");
+//
+//	
+//	
+//	VoterCardDao cardDao=new VoterCardDao();
+//	cardDao.updateVoterCard(300, card);
+//	
+//	Person person=new Person();
+//	person.setAddress("canada");
+//	person.setName("sandhyaS");
+//     //person=address name
+//	
+//	PersonDao personDao=new PersonDao();
+//	personDao.updatePerson(3, person);
+////	
 	
-	
-	
-	
-	
-	
+//	FIND
+//	PersonDao personDao=new PersonDao();
+//	personDao.findPerson(3);
+//	VoterCardDao cardDao=new VoterCardDao();
+//	cardDao.findVoterCard(300);
+//	DElete
+	VoterCardDao cardDao=new VoterCardDao();
+	cardDao.deleteVoterCard(100);
+//	PersonDao personDao=new PersonDao();
+//	personDao.deletePerson(3);
 	
 }
 }
